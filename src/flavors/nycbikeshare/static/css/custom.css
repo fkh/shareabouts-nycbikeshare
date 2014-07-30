@@ -92,6 +92,18 @@ textarea:focus {
   outline: 2px solid #b2182b;
 }
 
+/* hiding comment fields at end of submissions */
+
+div #reply {
+  display: none;
+}
+
+a.reply-link.btn.btn-small {
+  display: none;
+}
+.survey-header {
+  display: none;
+}
 
 /* =Header
 -------------------------------------------------------------- */
