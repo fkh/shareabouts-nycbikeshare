@@ -19,7 +19,15 @@ var Shareabouts = Shareabouts || {};
 
       // Init the map
       self.map = L.map(self.el, self.options.mapConfig.options);
-      self.placeLayers = L.layerGroup();
+      self.placeLayers = new L.MarkerClusterGroup({
+        showCoverageOnHover: false,
+        animateAddingMarkers: false
+        // iconCreateFunction: function(cluster) {
+        //   // console.log(cluster);
+        //   return new L.DivIcon({ html: '<b>' + cluster.getChildCount() + '</b>' });
+        // }
+        // singleMarkerMode: true
+      });
 
       // Add layers defined in the config file
       _.each(self.options.mapConfig.layers, function(config){
