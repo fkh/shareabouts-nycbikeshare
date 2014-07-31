@@ -289,6 +289,29 @@ a.close-btn:hover {
 #ticker {
   background-color: #33CBFF;
 }
+.legend {
+  padding: 0.75em 0.75em 0.5em;
+}
+.legend ul {
+  background-color: #fff;
+  padding: 0.5em;
+  border-radius: 3px;
+  box-shadow: -0.325em 0.325em 0 rgba(0,0,0,0.1);
+}
+.legend li {
+  line-height: 35px;
+  clear: left;
+  font-size: 0.85em;
+  font-weight:bold;
+  text-transform: uppercase;
+}
+.legend li + li {
+  margin-top: 0.5em;
+}
+.legend li img {
+  float: left;
+  margin-right: 0.5em;
+}
 .recent-points a {
   color: #fff;
   border-top: 1px solid #80DFFF;
@@ -415,7 +438,9 @@ a.shareabouts-logo:hover {
   .list-toggle-btn:hover .show-the-list:before {
     text-shadow: -0.25em 0 0 #33CBFF, -0.25em -1px 0 #33CBFF, -0.25em 1px 0 #33CBFF, -0.375em 0 0 #fff;
   }
-
+  #geocode-address-bar {
+    border-right: 1px solid #004f91;
+  }
 }
 
 @media only screen and (min-width: 80em) {
