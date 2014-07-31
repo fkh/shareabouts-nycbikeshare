@@ -21,11 +21,12 @@ var Shareabouts = Shareabouts || {};
       self.map = L.map(self.el, self.options.mapConfig.options);
       self.placeLayers = new L.MarkerClusterGroup({
         showCoverageOnHover: false,
-        animateAddingMarkers: false
-        // iconCreateFunction: function(cluster) {
-        //   // console.log(cluster);
-        //   return new L.DivIcon({ html: '<b>' + cluster.getChildCount() + '</b>' });
-        // }
+        animateAddingMarkers: false,
+        maxClusterRadius: 20,
+        iconCreateFunction: function(cluster) {
+          // console.log(cluster);
+          return new L.DivIcon({ className: 'cluster-icon', html: '<img src="/static/css/images/bikemarker.png"/>' });
+        }
         // singleMarkerMode: true
       });
 
