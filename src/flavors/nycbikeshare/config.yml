@@ -59,20 +59,11 @@ place_types:
   previous-suggestion:
     label: _(station)
     rules:
-      - condition: '{{layer.focused}} === false && {{map.zoom}} <= 12'
-        style:
-          color: '#00BFFF'
-          radius: 3
-          weight: 1
-          opacity: 1
-          fillOpacity: 0.8
-      - condition: '{{layer.focused}} === false && {{map.zoom}} > 12'
-        style:
-          color: '#00BFFF'
-          radius: 4
-          weight: 1
-          opacity: 1
-          fillOpacity: 0.8
+      - condition: '{{layer.focused}} === false'
+        icon:
+          iconUrl: /static/css/images/bikemarker.png
+          iconSize: [22, 22]
+          iconAnchor: [11, 16]
       - condition: '{{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/map-icon-inservice.png
