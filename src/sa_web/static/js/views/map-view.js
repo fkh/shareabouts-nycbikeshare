@@ -51,7 +51,8 @@ var Shareabouts = Shareabouts || {};
         self.initGeolocation();
       }
 
-      self.map.addLayer(self.placeLayers);
+      // Bike share hack: Add this in app view when all places are loaded
+      // self.map.addLayer(self.placeLayers);
 
       // Init the layer view cache
       this.layerViews = {};

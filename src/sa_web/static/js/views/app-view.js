@@ -268,6 +268,9 @@ var Shareabouts = Shareabouts || {};
           $currentProgress.width(percent + '%');
 
           if (pagesComplete === totalPages) {
+            // Hack for NYC Bike Share clustering
+            self.mapView.map.addLayer(self.mapView.placeLayers);
+
             _.delay(function() {
               $progressContainer.hide();
             }, 2000);
