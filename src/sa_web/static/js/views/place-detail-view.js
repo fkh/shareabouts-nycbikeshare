@@ -33,6 +33,8 @@ var Shareabouts = Shareabouts || {};
       });
 
       this.supportView = new S.SupportView({
+        // Added for NYC Bike Share
+        placeModel: this.model,
         collection: this.model.submissionSets[this.supportType],
         supportConfig: this.options.supportConfig,
         userToken: this.options.userToken
