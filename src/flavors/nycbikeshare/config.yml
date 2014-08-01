@@ -98,24 +98,24 @@ place:
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(ZIP Code)
+    - prompt: _(Your Zip Code)
       type: text
       name: private-submitter_zipcode
       optional: true
       attrs:
         - key: placeholder
-          value: _(ZIP Code)
+          value: _(Zip Code)
         - key: size
           value: 30
-    # - prompt: _(Location Name)
-    #   type: text
-    #   name: name
-    #   optional: true
-    #   attrs:
-    #     - key: placeholder
-    #       value: _(Location Name)
-    #     - key: size
-    #       value: 30
+    - prompt: _(Location Name)
+      type: text
+      name: name
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Location Name)
+        - key: size
+          value: 30
     - type: hidden
       name: location_type
       attrs:
