@@ -31,6 +31,11 @@ var Shareabouts = Shareabouts || {};
         }
       });
 
+      self.placeLayers.on('clusterclick', function (a) {
+        self.options.router.navigate('', {trigger: true});
+        // console.log('cluster ' + a.layer.getAllChildMarkers().length);
+      });
+
       // Add layers defined in the config file
       _.each(self.options.mapConfig.layers, function(config){
         // type is required by Argo for fetching data, so it's a pretty good
