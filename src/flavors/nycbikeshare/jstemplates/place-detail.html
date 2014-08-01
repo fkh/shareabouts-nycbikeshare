@@ -29,7 +29,7 @@
               in {{ region }}
             {{/if}}{{/_}}
 
-            <time datetime="{{ created_datetime }}" class="response-date">{{#if posted_dat}} in 2012 {{^}}<a href="/place/{{ id }}">{{ fromnow created_datetime }}</a>{{/if}}</time>
+            {{#if posted_dat}} in 2012 {{^}}{{ fromnow created_datetime }}{{/if}}
 
             {{^if survey_config}}
             <a href="/place/{{ id }}" class="view-on-map-btn btn btn-small">View On Map</a>
