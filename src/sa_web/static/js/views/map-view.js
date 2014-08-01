@@ -19,7 +19,17 @@ var Shareabouts = Shareabouts || {};
 
       // Init the map
       self.map = L.map(self.el, self.options.mapConfig.options);
-      self.placeLayers = L.layerGroup();
+      self.placeLayers = new L.MarkerClusterGroup({
+        showCoverageOnHover: false,
+        animateAddingMarkers: false,
+        maxClusterRadius: 20,
+        spiderfyOnMaxZoom: false,
+        disableClusteringAtZoom: 16,
+        iconCreateFunction: function(cluster) {
+          // console.log(cluster);
+          return new L.DivIcon({ className: 'cluster-icon', html: '<img src="/static/css/images/bikemarker-cluster.png"/>' });
+        }
+      });
 
       // Add layers defined in the config file
       _.each(self.options.mapConfig.layers, function(config){
@@ -41,7 +51,8 @@ var Shareabouts = Shareabouts || {};
         self.initGeolocation();
       }
 
-      self.map.addLayer(self.placeLayers);
+      // Bike share hack: Add this in app view when all places are loaded
+      // self.map.addLayer(self.placeLayers);
 
       // Init the layer view cache
       this.layerViews = {};
