@@ -32,7 +32,7 @@ map:
       lat: 40.73597
       lng: -73.93238
     zoom: 12
-    minZoom: 10
+    minZoom: 12
     maxZoom: 17
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
