@@ -23,11 +23,12 @@ var Shareabouts = Shareabouts || {};
         showCoverageOnHover: false,
         animateAddingMarkers: false,
         maxClusterRadius: 20,
+        spiderfyOnMaxZoom: false,
+        disableClusteringAtZoom: 16,
         iconCreateFunction: function(cluster) {
           // console.log(cluster);
           return new L.DivIcon({ className: 'cluster-icon', html: '<img src="/static/css/images/bikemarker-cluster.png"/>' });
         }
-        // singleMarkerMode: true
       });
 
       // Add layers defined in the config file
