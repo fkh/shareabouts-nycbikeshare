@@ -245,8 +245,19 @@ a.close-btn:hover {
 }
 
 /* Promotion: Voting & Sharing */
+.promotion {
+  float: none;
+}
+.support .btn, .support .btn:visited, .support .btn:link {
+  border-width: 0.5em;
+  font-size: 1em;
+  text-align: left;
+/*  display: inline-block;*/
+/*  width: auto;*/
+}
 .user-support label {
   color: #fff;
+  padding-left: 30px;
 }
 .user-support input[type=checkbox]:checked ~ label {
 }
@@ -254,10 +265,58 @@ a.close-btn:hover {
   background-color: #33CBFF;
   color: #fff;
 }
+.sharing {
+  float: left;
+  width: 100%;
+}
+.share-link {
+  margin: 0;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.share-link a {
+  width: 100%;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: -0.25em 0.25em 0 rgba(0,0,0,0.1);
+}
+.share-link a:after {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 32px;
+  font-size: 0.75em;
+  line-height: 32px;
+  text-indent: 0;
+}
+.share-facebook {
+  padding-right: 5px !important;
+}
+.share-facebook a {
+  background-color: #3c5a94;
+}
+.share-facebook a:after {
+  content: 'Facebook';
+  padding-left: 26px;
+}
+.share-twitter {
+  padding-left: 5px !important;
+}
+.share-twitter a {
+  background-color: #25abdd;
+}
+.share-twitter a:after {
+  content: 'Twitter';
+  padding-left: 30px;
+}
 
 /* Places */
 .place-header h1 {
   font-size: 1.375em;
+  margin-bottom: 0.75em;
 }
 
 .response-date {
@@ -441,9 +500,19 @@ a.shareabouts-logo:hover {
   #geocode-address-bar {
     border-right: 1px solid #004f91;
   }
+
+  /* narrower content area */
+  .activity-enabled #content { left: 47%; }
+  .activity-enabled.content-visible #map-container { width: 47%; }
+
 }
 
 @media only screen and (min-width: 80em) {
+
+  /* narrower content area */
+  .activity-enabled #content { left: 55%; }
+  .activity-enabled.content-visible #map-container { width: 55%; }
+
 }
 
 @media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
