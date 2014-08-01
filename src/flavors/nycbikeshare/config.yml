@@ -97,7 +97,13 @@ place:
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(Your Email)
+    - prompt: _(This would be a great location because...)
+      type: textarea
+      name: description
+      attrs:
+        - key: placeholder
+          value: _(Description)
+    - prompt: _(Your Email  (optional))
       type: text
       name: private-submitter_email
       attrs:
@@ -105,7 +111,7 @@ place:
           value: _(Email address)
         - key: size
           value: 30
-    - prompt: _(Your Zip Code)
+    - prompt: _(Your Zip Code (optional))
       type: text
       name: private-submitter_zipcode
       attrs:
@@ -126,12 +132,6 @@ place:
       attrs:
         - key: value
           value: suggestion
-    - prompt: _(This would be a great location because...)
-      type: textarea
-      name: description
-      attrs:
-        - key: placeholder
-          value: _(Description)
     # - prompt: _(Image)
     #   inputfile_label: _(Add an Image)
     #   type: file
