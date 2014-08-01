@@ -245,6 +245,16 @@ a.close-btn:hover {
 }
 
 /* Promotion: Voting & Sharing */
+.promotion {
+  float: none;
+}
+.support .btn, .support .btn:visited, .support .btn:link {
+  border-width: 0.5em;
+  font-size: 1em;
+  text-align: left;
+  display: inline-block;
+  width: auto;
+}
 .user-support label {
   color: #fff;
 }
@@ -254,10 +264,15 @@ a.close-btn:hover {
   background-color: #33CBFF;
   color: #fff;
 }
+.sharing {
+  float: left;
+  margin-left: -10px;
+}
 
 /* Places */
 .place-header h1 {
   font-size: 1.375em;
+  margin-bottom: 0.75em;
 }
 
 .response-date {
@@ -441,9 +456,19 @@ a.shareabouts-logo:hover {
   #geocode-address-bar {
     border-right: 1px solid #004f91;
   }
+
+  /* narrower content area */
+  .activity-enabled #content { left: 47%; }
+  .activity-enabled.content-visible #map-container { width: 47%; }
+
 }
 
 @media only screen and (min-width: 80em) {
+
+  /* narrower content area */
+  .activity-enabled #content { left: 55%; }
+  .activity-enabled.content-visible #map-container { width: 55%; }
+
 }
 
 @media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
