@@ -92,16 +92,22 @@ place:
     - prompt: _(Your Name)
       type: text
       name: submitter_name
-      optional: true
       attrs:
         - key: placeholder
           value: _(Name)
         - key: size
           value: 30
+    - prompt: _(Your Email)
+      type: text
+      name: private-submitter_email
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
     - prompt: _(Your Zip Code)
       type: text
       name: private-submitter_zipcode
-      optional: true
       attrs:
         - key: placeholder
           value: _(Zip Code)
@@ -110,7 +116,6 @@ place:
     - prompt: _(Location Name)
       type: text
       name: name
-      optional: true
       attrs:
         - key: placeholder
           value: _(Location Name)
@@ -124,7 +129,6 @@ place:
     - prompt: _(This would be a great location because...)
       type: textarea
       name: description
-      optional: true
       attrs:
         - key: placeholder
           value: _(Description)
