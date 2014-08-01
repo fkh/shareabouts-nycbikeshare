@@ -52,9 +52,9 @@ place_types:
           iconAnchor: [11, 16]
       - condition: '{{layer.focused}} === true'
         icon:
-          iconUrl: /static/css/images/map-icon-inservice.png
-          iconSize: [40, 52]
-          iconAnchor: [20, 52]
+          iconUrl: /static/css/images/bikeshare-red-marker.png
+          iconSize: [29, 35]
+          iconAnchor: [15, 34]
 
   previous-suggestion:
     label: _(station)
