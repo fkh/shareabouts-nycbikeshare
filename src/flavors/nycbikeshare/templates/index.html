@@ -67,14 +67,14 @@ var placeFormView_setLocation = Shareabouts.PlaceFormView.prototype.setLocation;
 Shareabouts.PlaceFormView.prototype.setLocation = function(locationData) {
   placeFormView_setLocation.call(this, locationData);
 
-  var $placeNameField = this.$('[name="name"]'),
-      $approxAddress = $placeNameField.next();
+  var $fieldset = this.$('fieldset'),
+      $approxAddress = this.$('.approx-address');
 
   if ($approxAddress.length === 0) {
-    $approxAddress = $('<p class="approx-address" style="font-size:0.75em;"></p>').insertAfter($placeNameField);
+    $approxAddress = $('<p class="approx-address"></p>').prependTo($fieldset);
   }
 
-  $approxAddress.html('<span class="address-label" style="font-weight:bold;">Approximate location:</span> ' + Handlebars.templates['location-string'](locationData));
+  $approxAddress.html('<label class="address-label">Approximate location of your suggestion</label><br>' + Handlebars.templates['location-string'](locationData));
 }
 </script>
 {% endblock %}
