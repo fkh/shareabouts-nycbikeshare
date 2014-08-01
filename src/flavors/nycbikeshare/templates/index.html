@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block site-title %}
-<a href="nyc.org/bikeshare"><img src="{{ config.static_url }}/css/images/dot_logo_web.png" class="site-logo" /></a><a href="/">{{ config.app.name }}</a>
+<a href="nyc.org/bikeshare"><img src="{{ config.static_url }}css/images/dot_logo_web.png" class="site-logo" /></a><a href="/">{{ config.app.name }}</a>
 {% endblock %}
 
 {% block meta %}
@@ -22,9 +22,7 @@
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ place.properties.name }}" />
     <meta property="og:description" content="{{ place.properties.description }}" />
-    {% with attachment=place.properties.attachments|first %}
-    <meta name="og:image" content="{{ attachment.file }}">
-    {% endwith %}
+    <meta property="og:image" content="{{ config.static_url }}css/images/suggestions-640x480.png">
   {% else %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
@@ -35,6 +33,7 @@
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ config.app.title }}" />
     <meta property="og:description" content="{{ config.app.meta_description }}" />
+    <meta property="og:image" content="{{ config.static_url }}css/images/suggestions-640x480.png">
   {% endif%}
 {% endblock %}
 
@@ -44,9 +43,9 @@
 {% block sidebar %}
 <div class="legend">
   <ul class="unstyled-list">
-    <li class="service-area"><img src="{{ config.static_url }}/css/images/legend-service-area.png" class="" /> Current Service Area</li>
-    <li class="existing"><img src="{{ config.static_url }}/css/images/legend-existing.png" class="" /> Existing Station</li>
-    <li class="suggested"><img src="{{ config.static_url }}/css/images/legend-suggested.png" class="" /> Suggested Station</li>
+    <li class="service-area"><img src="{{ config.static_url }}css/images/legend-service-area.png" class="" /> Current Service Area</li>
+    <li class="existing"><img src="{{ config.static_url }}css/images/legend-existing.png" class="" /> Existing Station</li>
+    <li class="suggested"><img src="{{ config.static_url }}css/images/legend-suggested.png" class="" /> Suggested Station</li>
   </ul>
 </div>
 {% endblock %}
