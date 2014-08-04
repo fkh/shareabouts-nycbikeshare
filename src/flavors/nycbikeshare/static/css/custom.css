@@ -169,9 +169,7 @@ a.reply-link.btn.btn-small {
 #sign-in-btn:hover {
   color: #33CBFF;
 }
-a.logout-btn {
-  color: #BFEFFF;
-}
+a.logout-btn {}
 
 
 /* =Geocoding
