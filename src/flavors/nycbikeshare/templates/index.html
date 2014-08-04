@@ -10,23 +10,24 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ config.app.title }}">
-    {% if place.properties.description %}
-    <meta name="twitter:description" content="{{ place.properties.description }}">
+
+    {% if place.properties.reason %}
+    <meta name="twitter:description" content="{{ place.properties.reason }}">
     {% else %}
     <meta name="twitter:description" content="{{ config.app.meta_description }}">
     {% endif %}
 
-    <meta name="twitter:image:src" content="https://api.tiles.mapbox.com/v4/openplans.map-dmar86ym/url-{{ request.build_absolute_uri|urlencode:"" }}{{ config.static_url|urlencode:"" }}css%2Fimages%2Fbikeshare-red-marker-centered.png({{ place.geometry.coordinates.0 }},{{ place.geometry.coordinates.1 }})/{{ place.geometry.coordinates.0 }},{{ place.geometry.coordinates.1 }},15/600x315.png?access_token=pk.eyJ1Ijoib3BlbnBsYW5zIiwiYSI6IlF4YnlERjQifQ.E9wWa2jyjgKqCQOBmeucCw">
+    <meta name="twitter:image:src" content="//api.tiles.mapbox.com/v4/openplans.map-dmar86ym/url-{{ request.get_host|urlencode:"" }}{{ config.static_url|urlencode:"" }}css%2Fimages%2Fbikeshare-red-marker-centered.png({{ place.geometry.coordinates.0 }},{{ place.geometry.coordinates.1 }})/{{ place.geometry.coordinates.0 }},{{ place.geometry.coordinates.1 }},15/600x315.png?access_token=pk.eyJ1Ijoib3BlbnBsYW5zIiwiYSI6IlF4YnlERjQifQ.E9wWa2jyjgKqCQOBmeucCw">
 
     <!-- Facebook -->
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ config.app.title }}" />
-    {% if place.properties.description %}
-    <meta property="og:description" content="{{ place.properties.description }}" />
+    {% if place.properties.reason %}
+    <meta property="og:description" content="{{ place.properties.reason }}" />
     {% else %}
     <meta property="og:description" content="{{ config.app.meta_description }}" />
     {% endif %}
-    <meta property="og:image" content="https://api.tiles.mapbox.com/v4/openplans.map-dmar86ym/url-{{ request.build_absolute_uri|urlencode:"" }}{{ config.static_url|urlencode:"" }}css%2Fimages%2Fbikeshare-red-marker-centered.png({{ place.geometry.coordinates.0 }},{{ place.geometry.coordinates.1 }})/{{ place.geometry.coordinates.0 }},{{ place.geometry.coordinates.1 }},15/600x315.png?access_token=pk.eyJ1Ijoib3BlbnBsYW5zIiwiYSI6IlF4YnlERjQifQ.E9wWa2jyjgKqCQOBmeucCw">
+    <meta property="og:image" content="//api.tiles.mapbox.com/v4/openplans.map-dmar86ym/url-{{ request.get_host|urlencode:"" }}{{ config.static_url|urlencode:"" }}css%2Fimages%2Fbikeshare-red-marker-centered.png({{ place.geometry.coordinates.0 }},{{ place.geometry.coordinates.1 }})/{{ place.geometry.coordinates.0 }},{{ place.geometry.coordinates.1 }},15/600x315.png?access_token=pk.eyJ1Ijoib3BlbnBsYW5zIiwiYSI6IlF4YnlERjQifQ.E9wWa2jyjgKqCQOBmeucCw">
   {% else %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
