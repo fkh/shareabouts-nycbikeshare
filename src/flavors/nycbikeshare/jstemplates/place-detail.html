@@ -44,7 +44,6 @@
             <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
           </div>
           {{/ attachments }}
-          {{#if reason}}{{reason}}{{^}}{{/if}}
           {{#each_place_item "submitter_name" "name" "location_type"}}
           <div class="place-item place-item-{{ name }}">
             <span class="place-label place-label-{{ name }}">{{ label }}</span>
