@@ -18,7 +18,7 @@
             named <span class="place-name">{{ place.name }}</span>
           {{^}}
             {{#if place.location }}
-              at <span class="place-name">{{>location-string place.location }}{{#is location.adminArea4 'Queens County'}} in Queens{{/is}}{{#is location.adminArea4 'Kings'}} in Brooklyn{{/is}}{{#is location.adminArea4 'New York'}} in Manhattan{{/is}}{{#is location.adminArea4 'Richmond'}} in Staten Island{{/is}}{{#is location.adminArea4 'Bronx County'}} in Bronx{{/is}}</span>
+              near <span class="place-name">{{>location-string place.location }}{{#is location.adminArea4 'Queens County'}} in Queens{{/is}}{{#is location.adminArea4 'Kings'}} in Brooklyn{{/is}}{{#is location.adminArea4 'New York'}} in Manhattan{{/is}}{{#is location.adminArea4 'Richmond'}} in Staten Island{{/is}}{{#is location.adminArea4 'Bronx County'}} in Bronx{{/is}}</span>
               <!-- TODO: why doesn't borough name show up -->
             {{/if }}
           {{/if }}
@@ -56,7 +56,7 @@
           named <span class="place-name">{{ place.name }}</span>
         {{^}}
           {{#if place.location }}
-            at <span class="place-name">{{>location-string place.location }}{{#is location.adminArea4 'Queens County'}} in Queens{{/is}}{{#is location.adminArea4 'Kings'}} in Brooklyn{{/is}}{{#is location.adminArea4 'New York'}} in Manhattan{{/is}}{{#is location.adminArea4 'Richmond'}} in Staten Island{{/is}}{{#is location.adminArea4 'Bronx County'}} in Bronx{{/is}}</span>
+            near <span class="place-name">{{>location-string place.location }}{{#is location.adminArea4 'Queens County'}} in Queens{{/is}}{{#is location.adminArea4 'Kings'}} in Brooklyn{{/is}}{{#is location.adminArea4 'New York'}} in Manhattan{{/is}}{{#is location.adminArea4 'Richmond'}} in Staten Island{{/is}}{{#is location.adminArea4 'Bronx County'}} in Bronx{{/is}}</span>
             <!-- TODO: why doesn't borough name show up -->
           {{/if }}
         {{/if }}

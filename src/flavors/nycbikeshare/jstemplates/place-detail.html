@@ -29,7 +29,7 @@
               in {{ region }}
             {{/if}}{{/_}}
 
-            {{#if posted_dat}} in 2012 {{^}}{{ fromnow created_datetime }}{{/if}}
+            {{#is location_type 'previous-suggestion'}} in 2012 {{^}}{{ fromnow created_datetime }}{{/is}}
 
             {{^if survey_config}}
             <a href="/place/{{ id }}" class="view-on-map-btn btn btn-small">View On Map</a>
