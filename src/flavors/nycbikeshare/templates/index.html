@@ -80,6 +80,33 @@ Shareabouts.PlaceFormView.prototype.setLocation = function(locationData) {
   }
 
   $approxAddress.html('<label class="address-label">Approximate location of your suggestion</label><br>' + Handlebars.templates['location-string'](locationData));
-}
+};
+
+var util_geocode = Shareabouts.Util.MapQuest.geocode;
+Shareabouts.Util.MapQuest.geocode = function(location, bounds, options) {
+  var endStrings = ['brooklyn', 'manhattan', 'queens', 'bronx', 'staten island',
+                    ' nyc', ' ny', 'new york city', 'new york'],
+      isComplete = false,
+      end, i, locationEndsWith;
+
+  locationEndsWith = function(str) {
+    var endpos = location.length - str.length;
+    return (location.toLowerCase().trim().slice(endpos) === str)
+  }
+
+  for (i = 0; i < endStrings.length; ++i) {
+    end = endStrings[i];
+    if (locationEndsWith(end)) {
+      isComplete = true;
+      break;
+    }
+  }
+
+  if (!isComplete) {
+    location = location + ', New York, NY';
+  }
+
+  return util_geocode.call(this, location, bounds, options);
+};
 </script>
 {% endblock %}
