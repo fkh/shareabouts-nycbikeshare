@@ -99,7 +99,7 @@ place:
           value: 30
     - prompt: _(This would be a great location because...)
       type: textarea
-      name: description
+      name: reason
       attrs:
         - key: placeholder
           value: _(Description)
