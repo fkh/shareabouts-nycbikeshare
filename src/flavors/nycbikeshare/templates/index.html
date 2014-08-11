@@ -84,6 +84,9 @@ Shareabouts.PlaceFormView.prototype.setLocation = function(locationData) {
 
 var util_geocode = Shareabouts.Util.MapQuest.geocode;
 Shareabouts.Util.MapQuest.geocode = function(location, bounds, options) {
+  // If the address/location given is complete in that it already specifies
+  // a city in some format that we recognize (see endStrings), pass it on
+  // through. Otherwise, tack on "New York, NY".
   var endStrings = ['brooklyn', 'manhattan', 'queens', 'bronx', 'staten island',
                     ' nyc', ' ny', 'new york city', 'new york'],
       isComplete = false,
@@ -94,6 +97,8 @@ Shareabouts.Util.MapQuest.geocode = function(location, bounds, options) {
     return (location.toLowerCase().trim().slice(endpos) === str)
   }
 
+  // Loop through each recognized end and change the isComplete flag if one
+  // matches.
   for (i = 0; i < endStrings.length; ++i) {
     end = endStrings[i];
     if (locationEndsWith(end)) {
@@ -102,6 +107,7 @@ Shareabouts.Util.MapQuest.geocode = function(location, bounds, options) {
     }
   }
 
+  // If no ends matched, specify the city.
   if (!isComplete) {
     location = location + ', New York, NY';
   }
