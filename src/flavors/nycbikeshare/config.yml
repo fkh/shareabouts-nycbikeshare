@@ -13,10 +13,10 @@ app:
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
   # server. If you would like to override the chunk size, use this setting:
-  # places_page_size: 100
+  places_page_size: 500
 
   # Optional. List view is supported by default. Set to false to disable.
-  # list_enabled: false
+  list_enabled: false
 
 # Settings for map and layer configs
 map:
@@ -25,18 +25,18 @@ map:
 
   geocoding_enabled: true
   geocode_field_label: _(Enter an address...)
-  geocode_bounding_box: [39.830159, -75.478821, 40.167331, -74.781189]  # top, left, bottom, right
+  geocode_bounding_box: [40.478292, -74.297791, 40.865757, -73.701782]  # top, left, bottom, right
 
   options:
     center:
       lat: 40.73597
       lng: -73.93238
     zoom: 12
-    minZoom: 10
-    maxZoom: 17
+    minZoom: 12
+    maxZoom: 18
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>. Geocoding courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
     - url: http://{s}.tiles.mapbox.com/v3/openplans.161A_nycbikeshare/{z}/{x}/{y}.png
 
 # The keys show up in the dropdown list when you are adding a new place
@@ -52,9 +52,9 @@ place_types:
           iconAnchor: [11, 16]
       - condition: '{{layer.focused}} === true'
         icon:
-          iconUrl: /static/css/images/map-icon-inservice.png
-          iconSize: [40, 52]
-          iconAnchor: [20, 52]
+          iconUrl: /static/css/images/bikeshare-red-marker.png
+          iconSize: [29, 35]
+          iconAnchor: [15, 34]
 
   previous-suggestion:
     label: _(station)
@@ -66,9 +66,9 @@ place_types:
           iconAnchor: [11, 16]
       - condition: '{{layer.focused}} === true'
         icon:
-          iconUrl: /static/css/images/map-icon-inservice.png
-          iconSize: [40, 52]
-          iconAnchor: [20, 52]
+          iconUrl: /static/css/images/bikeshare-red-marker.png
+          iconSize: [29, 35]
+          iconAnchor: [15, 34]
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
   enabled: true
@@ -92,25 +92,36 @@ place:
     - prompt: _(Your Name)
       type: text
       name: submitter_name
-      optional: true
       attrs:
         - key: placeholder
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(ZIP Code)
-      type: text
-      name: private-submitter_zipcode
-      optional: true
+    - prompt: _(This would be a great location because...)
+      type: textarea
+      name: reason
       attrs:
         - key: placeholder
-          value: _(ZIP Code)
+          value: _(Description)
+    - prompt: _(Your Email  (optional))
+      type: text
+      name: private-submitter_email
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
+    - prompt: _(Your Zip Code (optional))
+      type: text
+      name: private-submitter_zipcode
+      attrs:
+        - key: placeholder
+          value: _(Zip Code)
         - key: size
           value: 30
     # - prompt: _(Location Name)
     #   type: text
     #   name: name
-    #   optional: true
     #   attrs:
     #     - key: placeholder
     #       value: _(Location Name)
@@ -121,13 +132,6 @@ place:
       attrs:
         - key: value
           value: suggestion
-    - prompt: _(This would be a great location because...)
-      type: textarea
-      name: description
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Description)
     # - prompt: _(Image)
     #   inputfile_label: _(Add an Image)
     #   type: file

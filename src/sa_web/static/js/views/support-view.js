@@ -12,6 +12,9 @@ var Shareabouts = Shareabouts || {};
       this.collection.on('remove', this.onChange, this);
 
       this.updateSupportStatus();
+
+      // NYC Bike share hack
+      this.existingSupportCount = parseInt(this.options.placeModel.get('ck_rating_'), 10) || 0;
     },
 
     render: function() {
@@ -20,7 +23,7 @@ var Shareabouts = Shareabouts || {};
       this.delegateEvents();
 
       this.$el.html(Handlebars.templates['place-detail-support']({
-        count: this.collection.size() || '',
+        count: (this.collection.size() || 0) + this.existingSupportCount,
         user_token: this.options.userToken,
         is_supporting: (this.userSupport !== undefined),
         support_config: this.options.supportConfig
@@ -63,6 +66,12 @@ var Shareabouts = Shareabouts || {};
         attrs = S.Util.getAttrs($form);
         this.collection.create(attrs, {
           wait: true,
+          beforeSend: function($xhr) {
+            // Do not generate activity for anonymous supports
+            if (!S.bootstrapped.currentUser) {
+              $xhr.setRequestHeader('X-Shareabouts-Silent', 'true');
+            }
+          },
           success: function() {
             S.Util.log('USER', 'place', 'successfully-support', self.collection.options.placeModel.getLoggingDetails());
           },

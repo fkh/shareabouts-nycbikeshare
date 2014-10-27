@@ -98,7 +98,10 @@ var Shareabouts = Shareabouts || {};
     },
 
     viewPlace: function(id, responseId) {
-      this.appView.viewPlace(id, responseId, this.loading);
+      // NYC Bike Share Hack: because of clustering, we should always zoom to
+      // marker. This expand the cluster and then focuses it. Previously,
+      // we only zoomed to the marker on load.
+      this.appView.viewPlace(id, responseId, true); // this.loading);
     },
 
     editPlace: function(){},

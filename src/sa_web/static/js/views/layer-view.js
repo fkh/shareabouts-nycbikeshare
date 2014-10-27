@@ -10,17 +10,17 @@ var Shareabouts = Shareabouts || {};
       this.isFocused = false;
 
       // A throttled version of the render function
-      this.throttledRender = _.throttle(this.render, 300);
+      // this.throttledRender = _.throttle(this.render, 300);
 
       // Bind model events
       this.model.on('change', this.updateLayer, this);
       this.model.on('focus', this.focus, this);
       this.model.on('unfocus', this.unfocus, this);
 
-      this.map.on('zoomend', this.updateLayer, this);
+      // this.map.on('zoomend', this.updateLayer, this);
 
       // On map move, adjust the visibility of the markers for max efficiency
-      this.map.on('move', this.throttledRender, this);
+      // this.map.on('move', this.throttledRender, this);
 
       this.initLayer();
     },
@@ -87,17 +87,17 @@ var Shareabouts = Shareabouts || {};
     },
     render: function() {
       // Show if it is within the current map bounds
-      var mapBounds = this.map.getBounds();
+      // var mapBounds = this.map.getBounds();
 
-      if (this.latLng) {
-        if (mapBounds.contains(this.latLng)) {
-          this.show();
-        } else {
-          this.hide();
-        }
-      } else {
+      // if (this.latLng) {
+      //   if (mapBounds.contains(this.latLng)) {
+      //     this.show();
+      //   } else {
+      //     this.hide();
+      //   }
+      // } else {
         this.show();
-      }
+      // }
     },
     onMarkerClick: function() {
       S.Util.log('USER', 'map', 'place-marker-click', this.model.getLoggingDetails());
@@ -128,7 +128,7 @@ var Shareabouts = Shareabouts || {};
     },
     remove: function() {
       this.removeLayer();
-      this.map.off('move', this.throttledRender, this);
+      // this.map.off('move', this.throttledRender, this);
     },
     setIcon: function(icon) {
       if (this.layer) {
