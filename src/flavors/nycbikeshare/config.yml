@@ -97,6 +97,7 @@ place:
           value: _(Name)
         - key: size
           value: 30
+        - key: required
     - prompt: _(This would be a great location because...)
       type: textarea
       name: reason
